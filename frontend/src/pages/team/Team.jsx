@@ -9,7 +9,7 @@ const Team = () => {
   const fetchTeamMembers = async () => {
     try {
       const response = await axios.get(
-        "https://backend-my-team-96f315f6.vercel.app/team"
+        "https://web-project-delta-eight.vercel.app/team"
       );
       console.log("Team Members Response:", response.data);
       setTeamMembers(response.data);

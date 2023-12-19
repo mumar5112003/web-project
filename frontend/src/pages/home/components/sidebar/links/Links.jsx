@@ -71,7 +71,7 @@ const Links = () => {
           </Link>
         </motion.a>
       ))}
-      <a href={"https://aestechs-admin.netlify.app/"}>Admin</a>
+      <a href={"https://web-project-7fv9.vercel.app/"}>Admin</a>
     </motion.div>
   );
 };

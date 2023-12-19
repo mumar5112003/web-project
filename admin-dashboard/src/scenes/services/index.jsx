@@ -67,7 +67,7 @@ const Services = () => {
   const fetchServicesData = async () => {
     try {
       const response = await axios.get(
-        "https://backend-my-team-96f315f6.vercel.app/services"
+        "https://web-project-delta-eight.vercel.app/services"
       );
 
       setServicesData(response.data);
@@ -92,7 +92,7 @@ const Services = () => {
   const handleCreate = async () => {
     try {
       await axios.post(
-        "https://backend-my-team-96f315f6.vercel.app/services",
+        "https://web-project-delta-eight.vercel.app/services",
         formData
       );
       setCreateDialogOpen(false);
@@ -110,7 +110,7 @@ const Services = () => {
   const handleUpdate = async () => {
     try {
       await axios.put(
-        `https://backend-my-team-96f315f6.vercel.app/services/${formData._id}`,
+        `https://web-project-delta-eight.vercel.app/services/${formData._id}`,
         formData
       );
       setUpdateDialogOpen(false);
@@ -123,7 +123,7 @@ const Services = () => {
   const handleDelete = async (id) => {
     try {
       await axios.delete(
-        `https://backend-my-team-96f315f6.vercel.app/services/${id}`
+        `https://web-project-delta-eight.vercel.app/services/${id}`
       );
       fetchServicesData();
     } catch (error) {

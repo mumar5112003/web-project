@@ -151,7 +151,7 @@ const Team = () => {
   const fetchTeamMembers = async () => {
     try {
       const response = await axios.get(
-        "https://backend-my-team-96f315f6.vercel.app/team"
+        "https://web-project-delta-eight.vercel.app/team"
       );
 
       setTeamMembers(response.data);
@@ -182,7 +182,7 @@ const Team = () => {
   const handleCreate = async () => {
     try {
       await axios.post(
-        "https://backend-my-team-96f315f6.vercel.app/team",
+        "https://web-project-delta-eight.vercel.app/team",
         formData
       );
       setCreateDialogOpen(false);
@@ -199,7 +199,7 @@ const Team = () => {
   const handleUpdate = async () => {
     try {
       await axios.put(
-        `https://backend-my-team-96f315f6.vercel.app/team/${formData._id}`,
+        `https://web-project-delta-eight.vercel.app/team/${formData._id}`,
         formData
       );
       setUpdateDialogOpen(false);
@@ -212,7 +212,7 @@ const Team = () => {
   const handleDelete = async (id) => {
     try {
       await axios.delete(
-        `https://backend-my-team-96f315f6.vercel.app/team/${id}`
+        `https://web-project-delta-eight.vercel.app/team/${id}`
       );
       fetchTeamMembers();
     } catch (error) {

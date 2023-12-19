@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "proxy": "https://backend-my-team-96f315f6.vercel.app",
+  "proxy": "https://web-project-delta-eight.vercel.app",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

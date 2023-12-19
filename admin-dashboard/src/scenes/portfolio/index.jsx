@@ -96,7 +96,7 @@ const Portfolio = () => {
   const fetchPortfolioItems = async () => {
     try {
       const response = await axios.get(
-        "https://backend-my-team-96f315f6.vercel.app/portfolio"
+        "https://web-project-delta-eight.vercel.app/portfolio"
       );
 
       setPortfolioItems(response.data);
@@ -125,7 +125,7 @@ const Portfolio = () => {
   const handleCreate = async () => {
     try {
       await axios.post(
-        "https://backend-my-team-96f315f6.vercel.app/portfolio",
+        "https://web-project-delta-eight.vercel.app/portfolio",
         formData
       );
       setCreateDialogOpen(false);
@@ -143,7 +143,7 @@ const Portfolio = () => {
   const handleUpdate = async () => {
     try {
       await axios.put(
-        `https://backend-my-team-96f315f6.vercel.app/portfolio/${formData._id}`,
+        `https://web-project-delta-eight.vercel.app/portfolio/${formData._id}`,
         formData
       );
       setUpdateDialogOpen(false);
@@ -156,7 +156,7 @@ const Portfolio = () => {
   const handleDelete = async (id) => {
     try {
       await axios.delete(
-        `https://backend-my-team-96f315f6.vercel.app/portfolio/${id}`
+        `https://web-project-delta-eight.vercel.app/portfolio/${id}`
       );
       fetchPortfolioItems();
     } catch (error) {

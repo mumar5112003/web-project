@@ -1,0 +1,68 @@
+// cloudcomputing.scss
+.cloud-computing-detail {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .overview,
+  .key-features {
+    margin-bottom: 30px;
+
+    h3 {
+      margin-bottom: 10px;
+    }
+
+    p,
+    ul {
+      color: #666;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin-bottom: 8px;
+      }
+    }
+
+    .success-stories {
+      margin-bottom: 30px;
+
+      h3 {
+        margin-bottom: 10px;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          margin-bottom: 8px;
+        }
+      }
+      .story-list {
+        blockquote {
+          margin-bottom: 20px;
+
+          p {
+            font-style: italic;
+          }
+
+          cite {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}

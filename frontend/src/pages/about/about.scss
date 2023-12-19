@@ -1,0 +1,36 @@
+header {
+  background-color: #3498db;
+
+  text-align: center;
+  padding: 20px;
+}
+
+.content {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #1a1a2e;
+  border-radius: 8px;
+}
+
+.content h2 {
+  color: #3498db;
+}
+
+.content p {
+  line-height: 1.6;
+}
+
+.testimonial {
+  border-top: 1px solid;
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+.testimonial p {
+  font-style: italic;
+}
+
+.testimonial .client {
+  margin-top: 10px;
+}

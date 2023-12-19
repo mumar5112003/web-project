@@ -1,0 +1,46 @@
+// Portfolio.scss
+
+.portfolio {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .portfolio-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Show three elements in each row */
+    gap: 20px;
+
+    .portfolio-item {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease-in-out;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .item-info {
+        padding: 15px;
+
+        h3 {
+          margin-bottom: 10px;
+        }
+
+        p {
+          color: #666;
+        }
+      }
+    }
+  }
+}

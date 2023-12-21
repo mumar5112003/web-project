@@ -39,3 +39,5 @@ export const fetchPost = (id) => API.get(`/posts/${id}`);
 
 export const comment = (value, id) =>
   API.post(`/posts/${id}/commentPost`, { value });
+
+export default API;

@@ -20,6 +20,7 @@ import AdminPanelSettingsOutlinedIcon from "@mui/icons-material/AdminPanelSettin
 import LockOpenOutlinedIcon from "@mui/icons-material/LockOpenOutlined";
 import SecurityOutlinedIcon from "@mui/icons-material/SecurityOutlined";
 import Header from "../../components/Header";
+import API from "../../api";
 
 const Team = () => {
   const theme = useTheme();
@@ -150,9 +151,7 @@ const Team = () => {
 
   const fetchTeamMembers = async () => {
     try {
-      const response = await axios.get(
-        "https://web-project-delta-eight.vercel.app/team"
-      );
+      const response = await API.get("/team");
 
       setTeamMembers(response.data);
     } catch (error) {
@@ -181,10 +180,7 @@ const Team = () => {
 
   const handleCreate = async () => {
     try {
-      await axios.post(
-        "https://web-project-delta-eight.vercel.app/team",
-        formData
-      );
+      await API.post("/team", formData);
       setCreateDialogOpen(false);
       fetchTeamMembers();
     } catch (error) {
@@ -198,10 +194,7 @@ const Team = () => {
   };
   const handleUpdate = async () => {
     try {
-      await axios.put(
-        `https://web-project-delta-eight.vercel.app/team/${formData._id}`,
-        formData
-      );
+      await API.put(`/team/${formData._id}`, formData);
       setUpdateDialogOpen(false);
       fetchTeamMembers();
     } catch (error) {
@@ -211,9 +204,7 @@ const Team = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(
-        `https://web-project-delta-eight.vercel.app/team/${id}`
-      );
+      await API.delete(`/team/${id}`);
       fetchTeamMembers();
     } catch (error) {
       console.error("Error deleting team member", error);

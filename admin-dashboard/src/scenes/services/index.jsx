@@ -13,6 +13,7 @@ import { tokens } from "../../theme";
 import axios from "axios";
 
 import Header from "../../components/Header";
+import API from "../../api";
 
 const Services = () => {
   const theme = useTheme();
@@ -66,9 +67,7 @@ const Services = () => {
 
   const fetchServicesData = async () => {
     try {
-      const response = await axios.get(
-        "https://web-project-delta-eight.vercel.app/services"
-      );
+      const response = await API.get("/services");
 
       setServicesData(response.data);
     } catch (error) {
@@ -91,10 +90,7 @@ const Services = () => {
 
   const handleCreate = async () => {
     try {
-      await axios.post(
-        "https://web-project-delta-eight.vercel.app/services",
-        formData
-      );
+      await API.post("/services", formData);
       setCreateDialogOpen(false);
       fetchServicesData();
     } catch (error) {
@@ -109,10 +105,7 @@ const Services = () => {
 
   const handleUpdate = async () => {
     try {
-      await axios.put(
-        `https://web-project-delta-eight.vercel.app/services/${formData._id}`,
-        formData
-      );
+      await API.put(`/services/${formData._id}`, formData);
       setUpdateDialogOpen(false);
       fetchServicesData();
     } catch (error) {
@@ -122,9 +115,7 @@ const Services = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(
-        `https://web-project-delta-eight.vercel.app/services/${id}`
-      );
+      await API.delete(`/services/${id}`);
       fetchServicesData();
     } catch (error) {
       console.error("Error deleting service", error);

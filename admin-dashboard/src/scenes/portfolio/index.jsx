@@ -13,6 +13,7 @@ import { DataGrid } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
 import axios from "axios";
 import Header from "../../components/Header";
+import API from "../../api";
 
 const Portfolio = () => {
   const theme = useTheme();
@@ -95,9 +96,7 @@ const Portfolio = () => {
 
   const fetchPortfolioItems = async () => {
     try {
-      const response = await axios.get(
-        "https://web-project-delta-eight.vercel.app/portfolio"
-      );
+      const response = await API.get("/portfolio");
 
       setPortfolioItems(response.data);
     } catch (error) {
@@ -124,10 +123,7 @@ const Portfolio = () => {
 
   const handleCreate = async () => {
     try {
-      await axios.post(
-        "https://web-project-delta-eight.vercel.app/portfolio",
-        formData
-      );
+      await API.post("/portfolio", formData);
       setCreateDialogOpen(false);
       fetchPortfolioItems();
     } catch (error) {
@@ -142,10 +138,7 @@ const Portfolio = () => {
 
   const handleUpdate = async () => {
     try {
-      await axios.put(
-        `https://web-project-delta-eight.vercel.app/portfolio/${formData._id}`,
-        formData
-      );
+      await API.put(`/portfolio/${formData._id}`, formData);
       setUpdateDialogOpen(false);
       fetchPortfolioItems();
     } catch (error) {
@@ -155,9 +148,7 @@ const Portfolio = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(
-        `https://web-project-delta-eight.vercel.app/portfolio/${id}`
-      );
+      await API.delete(`/portfolio/${id}`);
       fetchPortfolioItems();
     } catch (error) {
       console.error("Error deleting portfolio item", error);

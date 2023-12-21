@@ -68,7 +68,11 @@ export const signin = async (req, res) => {
     if (!isPasswordCorrect)
       return res.status(400).json({ message: "Wrong Credentials" });
     const token = jwt.sign(
-      { email: existingUser.email, id: existingUser._id },
+      {
+        email: existingUser.email,
+        id: existingUser._id,
+        userType: existingUser.userType,
+      },
       "aestechs",
       { expiresIn: "1h" }
     );

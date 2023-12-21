@@ -27,14 +27,14 @@ const Auth = () => {
   /* eslint-disable */
   useEffect(() => {
     /* global google */
-    function start() {
-      gapi.client.init({
-        clientId:
-          "508611820808-suj9olgtqmrlia7suqgbf3mbnqgjevji.apps.googleusercontent.com",
-        scope: "",
-      });
-    }
-    gapi.load("client:auth2", start);
+    // function start() {
+    //   gapi.client.init({
+    //     clientId:
+    //       "508611820808-suj9olgtqmrlia7suqgbf3mbnqgjevji.apps.googleusercontent.com",
+    //     scope: "",
+    //   });
+    // }
+    // gapi.load("client:auth2", start);
     ReactDOM.render(
       <GoogleLogin
         clientId="508611820808-suj9olgtqmrlia7suqgbf3mbnqgjevji.apps.googleusercontent.com"

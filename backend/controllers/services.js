@@ -19,13 +19,15 @@ export const createServices = async (req, res) => {
     // const priceBuffer = Buffer.from(price.split(",")[1], "base64");
 
     // Create a new Services member with the price buffer
-    const newServicesMember = await ServicesModel.create({
-      name,
-      description,
-      price,
-    });
+    if (req.userType === "admin") {
+      const newServicesMember = await ServicesModel.create({
+        name,
+        description,
+        price,
+      });
 
-    res.json(newServicesMember);
+      res.json(newServicesMember);
+    }
   } catch (error) {
     res.status(500).json({ error: "Internal Server Error" });
   }
@@ -40,18 +42,20 @@ export const updateServices = async (req, res) => {
     // const priceBuffer = Buffer.from(price.split(",")[1], "base64");
 
     // Update the Services member with the new price buffer
-    const updatedServicesMember = await ServicesModel.findByIdAndUpdate(
-      req.params.id,
-      {
-        name,
-        description,
+    if (req.userType === "admin") {
+      const updatedServicesMember = await ServicesModel.findByIdAndUpdate(
+        req.params.id,
+        {
+          name,
+          description,
 
-        price,
-      },
-      { new: true }
-    );
+          price,
+        },
+        { new: true }
+      );
 
-    res.json(updatedServicesMember);
+      res.json(updatedServicesMember);
+    }
   } catch (error) {
     res.status(500).json({ error: "Internal Server Error" });
   }
@@ -59,8 +63,10 @@ export const updateServices = async (req, res) => {
 
 export const deleteServices = async (req, res) => {
   try {
-    await ServicesModel.findByIdAndDelete(req.params.id);
-    res.json({ message: "Services member deleted successfully" });
+    if (req.userType === "admin") {
+      await ServicesModel.findByIdAndDelete(req.params.id);
+      res.json({ message: "Services member deleted successfully" });
+    }
   } catch (error) {
     res.status(500).json({ error: "Internal Server Error" });
   }

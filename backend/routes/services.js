@@ -5,16 +5,17 @@ import {
   deleteServices,
   createServices,
 } from "../controllers/services.js";
+import auth from "../middleware/auth.js";
 
 const router = express.Router();
 
 router.get("/", getServices);
 
 // Use the 'uploadImage' middleware to handle image uploads
-router.post("/", createServices);
+router.post("/", auth, createServices);
 
-router.put("/:id", updateServices);
+router.put("/:id", auth, updateServices);
 
-router.delete("/:id", deleteServices);
+router.delete("/:id", auth, deleteServices);
 
 export default router;

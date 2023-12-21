@@ -6,16 +6,17 @@ import {
   createTeam,
   uploadImage,
 } from "../controllers/team.js";
+import auth from "../middleware/auth.js";
 
 const router = express.Router();
 
 router.get("/", getTeam);
 
 // Use the 'uploadImage' middleware to handle image uploads
-router.post("/", uploadImage, createTeam);
+router.post("/", auth, uploadImage, createTeam);
 
-router.put("/:id", uploadImage, updateTeam);
+router.put("/:id", auth, uploadImage, updateTeam);
 
-router.delete("/:id", deleteTeam);
+router.delete("/:id", auth, deleteTeam);
 
 export default router;

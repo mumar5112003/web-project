@@ -186,7 +186,22 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-            <button onClick={handleLogout}>Logout</button>
+            <button
+              onClick={handleLogout}
+              style={{
+                padding: "10px 80px",
+                fontSize: "16px",
+                backgroundColor: "#4CAF50",
+                color: "white",
+                border: "none",
+                borderRadius: "5px",
+                cursor: "pointer",
+                boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+                transition: "background-color 0.3s ease",
+              }}
+            >
+              Logout
+            </button>
           </Box>
         </Menu>
       </ProSidebar>
